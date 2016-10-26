@@ -15,25 +15,23 @@
 <body>
         <h1>Future Value Calculator</h1>
         
-        <form action="calculate" method="post">
+        <form action="calculate" method="post"> 
     <input type="hidden" name="action" value="add">        
     <label class="center">InvestMent Amount:</label>
-    <input type="email" name="email" value="${user.email}"><br>
+    <input type="number" name="Amount" ><br>
     <label class="center">Yearly Interest Rate</label>
-    <input type="text" name="firstName" value="${user.firstName}"><br>
+    <input type="number" name="Rate" ><br>
     <label class="center">Number of Years:</label>
-    <input type="text" name="lastName" value="${user.lastName}"><br>        
+    <input type="number" name="Years"><br>        
     <label>&nbsp;</label>
     <input class="center" type="submit" value="Calculate" >
 </form>
         
         
         
-  <%@ page import="java.util.GregorianCalendar, java.util.Calendar" %>
-<%  
-    GregorianCalendar currentDate = new GregorianCalendar();
-    int currentYear = currentDate.get(Calendar.YEAR);
-%>
-<p>&copy; Copyright <%= currentYear %> Robert Feather &amp; Kevin the person</p>
+    <footer>
+
+<p>&copy; Copyright  Robert Feather &amp; Kevin the person</p>
+    </footer>
 </body>
 </html>
