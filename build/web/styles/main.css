@@ -1,0 +1,24 @@
+
+
+
+body{
+    
+font-family: PT Sans Pro,sans-serif 
+
+ }
+ h1{
+     text-align: center;
+    font-size:200%;
+    margin-top: 0px;
+    color: blue;  
+ }
+ body{
+     border-style: solid;
+    border-color: blue;
+ }
+ .center{
+     align-items: left;
+    margin-left:200px;
+     text-align: center
+    
+ }
