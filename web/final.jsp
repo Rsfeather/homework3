@@ -1,26 +1,24 @@
 <%-- 
-    Document   : final
-    Created on : Oct 26, 2016, 4:02:59 PM
-    Author     : rfeather
+    Copyright Robert Feather, Kevin Kowalsky
 --%>
 
 
-
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="/includes/header.html" />
         <h1>Future Value Calculator</h1>
         <jsp:useBean id="value" scope="request" class="business.Value"/>
+        <div class="center">
         <label>Amount:</label>
         <span><jsp:getProperty name="value" property="amount"/></span><br>
 <label>Rate:</label>
 <span><jsp:getProperty name="value" property="rate"/></span><br>
 <label>Years:</label>
 <span><jsp:getProperty name="value" property="years"/></span><br>
+    <lable>Future Value:</lable>
+        <span><jsp:getProperty name="value" property="total"/></span><br>
         
+        <footer></footer>
         
-    </body>
-</html>
+    <c:import url="/includes/footer.jsp" />
+        
+

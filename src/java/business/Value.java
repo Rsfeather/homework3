@@ -1,10 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ Copyright Robert Feather, Kevin Kowalsky
  */
 package business;
-
+import java.text.NumberFormat;
 import java.io.Serializable;
 
 /**
@@ -12,24 +10,32 @@ import java.io.Serializable;
  * @author rfeather
  */
 public class Value implements Serializable {
+    NumberFormat fmt = NumberFormat.getCurrencyInstance();
     private String amount;
+    private String fAmount;
     private String rate;
     private String years;
+    private String total;
    
 
     public Value() {
         amount = "";
         rate = "";
         years = "";
+        total ="";
     }
     public Value(String amount, String rate, String years) {
         this.amount = amount;
         this.rate = rate;
         this.years = years;
+        this.fAmount = amount;
+        this.fAmount = fmt.format(Double.parseDouble(this.fAmount));
+        
+        //this.amount=fmt.format(this.amount);
     }
 
     public String getAmount() {
-        return amount;
+        return fAmount;
     }
 
     public void setAmount(String amount) {
@@ -50,6 +56,22 @@ public class Value implements Serializable {
 
     public void setYears(String years) {
         this.years = years;
+    }
+    public void makeTotal(){
+        double ta = Double.parseDouble(amount);
+        double ty = Double.parseDouble(years);
+        double tr = Double.parseDouble(rate)/100;
+        double t = ta*(1+(tr*ty));
+        
+        total = fmt.format(t);
+        
+        
+        
+        
+    }
+    public String getTotal(){
+        this.makeTotal();
+        return total;
     }
 }
 

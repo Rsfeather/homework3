@@ -1,29 +1,40 @@
 
-
+/*Copyright Robert Feather, Kevin Kowalsky*/
 
 body{
     
 font-family: PT Sans Pro,sans-serif 
-
+ 
  }
  h1{
-     text-align: center;
+    color: blue;
     font-size:200%;
     margin-top: 0px;
-    color: blue;  
+    text-align: center;
+    
+     
  }
  body{
-     border-style: solid;
     border-color: blue;
+    border-style: solid;
     height: 200px;
  }
- .center{
-   
-    margin-left: auto;
-    margin-right:auto
-    
- }
+
  footer{
-     border-top: solid;
-     border-color: blue;
+    border-top: solid;
+    border-color: blue;
  }
+ input{
+    display: inline-block;
+ }
+ .center{
+    text-align: center;
+ }
+ @Media(max-width: 400px){
+    input{
+      display: block;
+    }
+    body{
+      height: 300px;
+ }
+    }

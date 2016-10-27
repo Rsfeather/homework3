@@ -1,37 +1,27 @@
 <%-- 
-    Document   : index
-    Created on : Oct 26, 2016, 3:32:21 PM
-    Author     : rfeather
+   Copyright Robert Feather, Kevin Kowalsky
 --%>
 
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>CSC 330 Homework 2</title>
-    <link rel="stylesheet" href="styles/main.css" type="text/css"/>
-</head>
-<body>
+<c:import url="/includes/header.html" />
+
         <h1>Future Value Calculator</h1>
-        
+          <div class="form"> 
+             <span class="center"> 
         <form action="calculate" method="post"> 
     <input type="hidden" name="action" value="add">        
-    <label class="center">InvestMent Amount:</label>
-    <input type="number" name="Amount" ><br>
+    <label class="center">Investment Amount:</label>
+    <input type="number" name="Amount" min="0" required><br>
     <label class="center">Yearly Interest Rate</label>
-    <input type="number" name="Rate" ><br>
+    <input type="number" name="Rate" min="0" step="any" required><br>
     <label class="center">Number of Years:</label>
-    <input type="number" name="Years"><br>        
+    <input placeholder="Integer number of years" type="number" name="Years" min="0" required><br>
+    
     <label>&nbsp;</label>
     <input class="center" type="submit" value="Calculate" >
-</form>
-        
-        
-        
-    <footer>
-
-<p>&copy; Copyright  Robert Feather &amp; Kevin the person</p>
-    </footer>
-</body>
-</html>
+    
+        </form></div>
+        <footer></footer>
+</span>
+<c:import url="/includes/footer.jsp" />
