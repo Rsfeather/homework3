@@ -9,7 +9,7 @@
     GregorianCalendar currentDate = new GregorianCalendar();
     int currentYear = currentDate.get(Calendar.YEAR);
 %>
-<p>&copy; Copyright <%= currentYear %> Robert Feather &amp; Kevin Kowalsky</p>
+<section><p>&copy; Copyright <%= currentYear %> Robert Feather &amp; Kevin Kowalsky</p></section>
 </body>
 
 </html>

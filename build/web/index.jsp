@@ -8,7 +8,7 @@
 
         <h1>Future Value Calculator</h1>
           <div class="form"> 
-             <span class="center"> 
+              <section>
         <form action="calculate" method="post"> 
     <input type="hidden" name="action" value="add">        
     <label class="center">Investment Amount:</label>
@@ -23,5 +23,6 @@
     
         </form></div>
         <footer></footer>
-</span>
+
 <c:import url="/includes/footer.jsp" />
+</section>

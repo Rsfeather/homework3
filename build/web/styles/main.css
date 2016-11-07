@@ -27,7 +27,7 @@ font-family: PT Sans Pro,sans-serif
  input{
     display: inline-block;
  }
- .center{
+ section{
     text-align: center;
  }
  @Media(max-width: 400px){

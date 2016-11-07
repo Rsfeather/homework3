@@ -5,6 +5,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="/includes/header.html" />
+<section>
         <h1>Future Value Calculator</h1>
         <jsp:useBean id="value" scope="request" class="business.Value"/>
         <div class="center">
@@ -22,3 +23,4 @@
     <c:import url="/includes/footer.jsp" />
         
 
+</section>

@@ -61,7 +61,7 @@ public class Value implements Serializable {
         double ta = Double.parseDouble(amount);
         double ty = Double.parseDouble(years);
         double tr = Double.parseDouble(rate)/100;
-        double t = ta*(1+(tr*ty));
+        double t = ta * (Math.pow(1 + (tr), ty));
         
         total = fmt.format(t);
         
