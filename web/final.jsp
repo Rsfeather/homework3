@@ -18,9 +18,39 @@
     <lable>Future Value:</lable>
         <span><jsp:getProperty name="value" property="total"/></span><br>
         
+        <table>
+            <tr>
+                <th><b>Year</b></th>
+                <th><b>Value</b></th>          
+            </tr>
+           
+            
+            <tr>
+                <td>1</td>
+                <td>${value.allTotal[0]}</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>${value.allTotal[1]}</td>
+                <td>${value.list}</td>
+            </tr>
+  
+  </tr>
+<c:forTokens items="${item.list}" delims="$" var="p">
+    <tr>
+    <td> <c:out value="${p}"/><p><br></td>
+    <td>test</td>
+    </tr>
+</c:forTokens>
+            </table>
+         
         <footer></footer>
         
     <c:import url="/includes/footer.jsp" />
         
 
 </section>
+    
+    
+   
+    

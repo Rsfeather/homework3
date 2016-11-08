@@ -4,7 +4,7 @@
 package business;
 import java.text.NumberFormat;
 import java.io.Serializable;
-
+import java.util.ArrayList;
 /**
  *
  * @author rfeather
@@ -16,7 +16,8 @@ public class Value implements Serializable {
     private String rate;
     private String years;
     private String total;
-   
+   private ArrayList<String> allTotal = new ArrayList<String>();
+   private String list ="";
 
     public Value() {
         amount = "";
@@ -64,14 +65,34 @@ public class Value implements Serializable {
         double t = ta * (Math.pow(1 + (tr), ty));
         
         total = fmt.format(t);
-        
-        
-        
+     
         
     }
+   public void makeArray(){
+       int a = 1;
+       double ty = Double.parseDouble(years);
+       while ( a <= ty) {
+           double t = Double.parseDouble(amount) * (Math.pow(1 + (Double.parseDouble(rate)/100), a));
+           String x = fmt.format(t);
+           allTotal.add(x);
+           a++;
+           list = list + x;
+          System.out.print(list);
+       }
+       
+       
+   }
     public String getTotal(){
         this.makeTotal();
         return total;
+    }
+    public ArrayList getAllTotal(){
+        this.makeArray();
+        return allTotal;
+    }
+    public String getList(){
+        this.makeArray();
+        return list;
     }
 }
 

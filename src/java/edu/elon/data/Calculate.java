@@ -63,13 +63,13 @@ public class Calculate extends HttpServlet {
             amount = request.getParameter("Amount");
             rate = request.getParameter("Rate");
             years = request.getParameter("Years");
-            
+               Value value = new Value(amount,rate,years);
+        request.setAttribute("value", value);
+        
           
         }
         
-        Value value = new Value(amount,rate,years);
-        request.setAttribute("value", value);
-        
+     
         getServletContext()
                 .getRequestDispatcher(url)
                 .forward(request, response);
