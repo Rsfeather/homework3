@@ -10,11 +10,11 @@
         <jsp:useBean id="value" scope="request" class="business.Value"/>
         <div class="center">
         <label>Amount:</label>
-        <span><jsp:getProperty name="value" property="amount"/></span><br>
+        <span>${value.amount}</span><br>
 <label>Rate:</label>
-<span><jsp:getProperty name="value" property="rate"/></span><br>
+<span>${value.rate}</span><br>
 <label>Years:</label>
-<span><jsp:getProperty name="value" property="years"/></span><br>
+<span>${value.years}</span><br>
     <lable>Future Value:</lable>
         <span><jsp:getProperty name="value" property="total"/></span><br>
         
@@ -24,24 +24,17 @@
                 <th><b>Value</b></th>          
             </tr>
            
+            ${value.makeArray()}
+            <c:forEach var="item" items="${value.allTotal}">
             
             <tr>
-                <td>1</td>
-                <td>${value.allTotal[0]}</td>
+                <td>${value.index}</td>
+                <td>${value.allTotal[value.index2]}></td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>${value.allTotal[1]}</td>
-                <td>${value.list}</td>
-            </tr>
-  
-  </tr>
-<c:forTokens items="${item.list}" delims="$" var="p">
-    <tr>
-    <td> <c:out value="${p}"/><p><br></td>
-    <td>test</td>
-    </tr>
-</c:forTokens>
+      
+         
+            </c:forEach>
+
             </table>
          
         <footer></footer>

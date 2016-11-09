@@ -17,7 +17,8 @@ public class Value implements Serializable {
     private String years;
     private String total;
    private ArrayList<String> allTotal = new ArrayList<String>();
-   private String list ="";
+   private int index =-1;
+  private int index2;
 
     public Value() {
         amount = "";
@@ -76,8 +77,7 @@ public class Value implements Serializable {
            String x = fmt.format(t);
            allTotal.add(x);
            a++;
-           list = list + x;
-          System.out.print(list);
+          
        }
        
        
@@ -87,12 +87,22 @@ public class Value implements Serializable {
         return total;
     }
     public ArrayList getAllTotal(){
-        this.makeArray();
+        
+        System.out.println(allTotal);
         return allTotal;
+        
     }
-    public String getList(){
-        this.makeArray();
-        return list;
+    public int getIndex(){
+        
+        if (index < allTotal.size()){
+            index++;
+        }
+        
+        return index;
+    }
+    public int getIndex2(){
+        index2 = index;
+        return index2;
     }
 }
 
